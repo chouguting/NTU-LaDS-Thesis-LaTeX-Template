@@ -7,22 +7,22 @@
 \ntusetup{
   university*   = {National Taiwan University},
   university    = {國立臺灣大學},
-  college       = {工學院},
-  college*      = {College of Engineering},
-  institute     = {工業工程學研究所},
-  institute*    = {Department of Industrial Engineering}, % 請確認您的科系為Department of xxx或Institute of xxx
-  title         = {國立臺灣大學碩博士畢業論文模版},
-  title*        = {National Taiwan University (NTU) \\ Thesis/Dissertation Template in \LaTeX},
-  author        = {彭新翔},
-  author*       = {Hsin-Hsiang Peng},
-  ID            = {R05546030},
-  advisor       = {吳文方},
-  advisor*      = {Wen-Fang Wu},
-  date          = {2020-05-01},         % 若註解掉，則預設為當天
-  oral-date     = {2020-05-01},         % 若註解掉，則預設為當天
-  DOI           = {10.5566/NTU2018XXXXX},
-  keywords      = {LaTeX, 中文, 論文, 模板},
-  keywords*     = {LaTeX, CJK, Thesis, Template},
+  college       = {電機資訊學院},
+  college*      = {College of Electrical Engineering and Computer Science},
+  institute     = {電機工程學系},
+  institute*    = {Department of Electrical Engineering}, % 請確認您的科系為Department of xxx或Institute of xxx
+  title         = {論文中文標題}, %論文中文標題
+  title*        = {Thesis English Title}, %論文英文標題
+  author        = {姓名},  % 請填寫中文姓名
+  author*       = {Name},  % 請填寫英文姓名
+  ID            = {RXXXXXXXX},  % 學號
+  advisor       = {黃俊郎},
+  advisor*      = {Jiun-Lang Huang},
+  % date          = {2020-05-01},         % 若註解掉，則預設為當天
+  % oral-date     = {2020-05-01},         % 若註解掉，則預設為當天
+  DOI           = {10.6342/NTU202XXXXXXX},
+  keywords      = {關鍵字1、關鍵字2、關鍵字3}, % 中文關鍵字，請用頓號「、」分隔
+  keywords*     = {keyword 1, keyword 2, keyword 3},  % 英文關鍵字，請用逗號「,」分隔
 }
 
 % --------------------------------------------------
@@ -38,7 +38,8 @@
 \usepackage{array}                      % 調整表格高度
 \usepackage{longtable}                  % 支援跨頁長表格
 \usepackage{paralist}                   % 列表環境
-
+\usepackage{tabularx}                  % 自動調整欄寬的表格
+\usepackage{makecell}
 
 \usepackage{lipsum}                     % 英文亂字
 \usepackage{zhlipsum}                   % 中文亂字

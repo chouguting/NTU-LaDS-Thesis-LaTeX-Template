@@ -3,8 +3,8 @@
 % !TEX encoding = UTF-8 Unicode
 
 \documentclass[
-  twoside,
-  openright,
+  oneside,                        % oneside | twoside (預設值)
+  openany,                        % openright | openany
   degree    = master,               % degree = master | doctor
   language  = english,              % language = chinese | english
   fontset   = template,             % fontset = default | template | system | overleaf
@@ -19,7 +19,13 @@
 % 封面與口試審定
 % Cover and Verification Letter
 \makecover                          % 論文封面（Cover）
-\makeverification                   % 口試委員審定書（Verification Letter）
+% \makeverification                   % 口試委員審定書（Verification Letter）
+
+%插入審定書的pdf檔
+\includepdf[pages={1}]{front/acceptance_certificate.pdf}
+
+
+\pagenumbering{roman} % 頁碼從致謝開始（羅馬數字）
 
 % 致謝與論文摘要
 % Acknowledgement and Abstract
@@ -32,16 +38,17 @@
 \maketableofcontents                % 目錄（Table of Contents）
 \makelistoffigures                  % 圖目錄（List of Figures）
 \makelistoftables                   % 表目錄（List of Tables）
-\input{front/denotation}            % 符號列表（Denotation）
+% \input{front/denotation}            % 符號列表（Denotation）
 
 % 論文內容
 % Contents of Thesis
+\cleardoublepage                  % 章節從下一個偶數頁開始 (如果是openany則沒有影響)
+\pagenumbering{arabic}            % 主文頁碼從 1 開始
 \mainmatter
 \input{contents/chapter01}
 \input{contents/chapter02}
-\input{contents/chapter03}
-\input{contents/chapter03}
-\input{contents/chapter04}
+
+
 
 % 參考文獻
 % References
@@ -52,6 +59,6 @@
 % 附錄
 % Appendices
 \input{back/appendix01}
-\input{back/appendix02}
+% \input{back/appendix02}
 
 \end{document}

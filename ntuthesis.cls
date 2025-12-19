@@ -30,6 +30,7 @@
 \RequirePackage{kvdefinekeys, kvsetkeys, kvoptions}
 \RequirePackage{iftex}
 \RequirePackage{ifthen}
+\RequirePackage{pdfpages}          % 插入pdf檔案要用的套件
 
 % [定義變數]
 % Define essential variables.
@@ -222,7 +223,7 @@
 \newcommand\ntu@date@zh@digit[3]{\the\numexpr#1-1911\relax~年~\number#2~月~\number#3~日}
 \newcommand\ntu@date@zh@digit@short[3]{\the\numexpr#1-1911\relax~年~\number#2~月}
 \newcommand\ntu@date@en@short[3]{\monthname[#2], #1}  % 英文月年之間無逗號
-\newcommand\ntu@date@en@short[3]{\monthname[#2] #1}   % 英文月年之間有逗號
+% \newcommand\ntu@date@en@short[3]{\monthname[#2] #1}   % 英文月年之間有逗號
 
 \newcommand{\ntu@setgeometry}[1]{\expandafter\newgeometry\expandafter{#1}}
 
@@ -574,7 +575,8 @@
   linkcolor=black,
   filecolor=gray,
   anchorcolor=blue,
-  citecolor=blue
+  citecolor=blue,
+  urlcolor=black 
 }
 
 % [目錄格式]
@@ -699,7 +701,7 @@
       \raisebox{-\paperheight}{
       \put(\LenToUnit{-1cm},\LenToUnit{1cm}){
       \fboxrule=0pt\fboxsep=0pt\framebox[0pt][r]{
-        \href{http://dx.doi.org/#1}{doi:#1}
+        \href{https://doi.org/#1}{doi:#1}
 }}}}}}}
 
 % [生成封面]
@@ -808,7 +810,7 @@
 \newcommand{\maketableofcontents}{
   \cleardoublepage
   \phantomsection
-  \addcontentsline{toc}{chapter}{\ntu@tableofcontents}
+  \addcontentsline{toc}{chapter}{\ntu@tableofcontents}  %這個會導致目錄中出現目錄的頁碼
   \tableofcontents
 }
 
@@ -817,7 +819,7 @@
 \newcommand{\makelistoffigures}{
   \cleardoublepage
   \phantomsection
-  \addcontentsline{toc}{chapter}{\ntu@listoffigures}
+  \addcontentsline{toc}{chapter}{\ntu@listoffigures} %這個會導致目錄中出現圖表目錄的頁碼
   \renewcommand{\numberline}{\figurename~\oldnumberline}
   \listoffigures
 }
@@ -826,7 +828,7 @@
 \newcommand{\makelistoftables}{
   \cleardoublepage
   \phantomsection
-  \addcontentsline{toc}{chapter}{\ntu@listoftables}
+  \addcontentsline{toc}{chapter}{\ntu@listoftables} % 這個會導致目錄中出現圖表目錄的頁碼
   \renewcommand{\numberline}{\tablename~\oldnumberline}
   \listoftables
 }
